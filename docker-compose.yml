@@ -1,0 +1,15 @@
+version: "3"
+services:
+  #######################################
+  # JSON-SERVER 実行環境
+  # docker-compose -f docker-compose.yml up
+  #######################################
+  json_server:
+    image: node:16
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "5001:5001"
+    command: sh -c 'yarn && yarn watch-run'
+    tty: true
